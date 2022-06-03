@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">messenger</string>
+    <string name="message">message</string>
+    <string name="name">name</string>
+    <string name="messagetext">Сообщение</string>
+    <string name="msgtext" />
+    <string name="nametext">Ник</string>
+</resources>
