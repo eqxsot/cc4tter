@@ -58,8 +58,16 @@ public class MainActivity extends AppCompatActivity {
         sendBtn.setOnClickListener(view -> {
             try {
                 NetworkMethodSend nms = new NetworkMethodSend();
+                String name = nametext.getText().toString();
+                String msg = msgtext.getText().toString();
+                if (name.length() > 20) {
+                    name = name.substring(0, 20);
+                }
+                if (msg.length() > 100) {
+                    msg = msg.substring(0, 100);
+                }
 
-                nms.sendPOST(serverURL, "{\"name\":\"" + nametext.getText() + ":\", \"message\":\"" + msgtext.getText() + "\"}");
+                nms.sendPOST(serverURL, "{\"name\":\"" + name + ":\", \"message\":\"" + msg + "\"}");
             }
             catch (Exception e) {
                 Toast.makeText(getApplicationContext(),"NO CONNECTION",
@@ -85,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
         catch (Exception e) {
-            nameArr = new String[]{"", "", "", "", "", "", "", "", "", ""};
-            msgArr = new String[]{"", "", "", "", "", "", "", "", "", ""};
+            nameArr = new String[]{"", "", "", "", "", "                  ЗАГРУЗКА...", "", "", "", ""};
+            msgArr = new String[]{"", "", "", "", "", "если загрузка идёт слишком долго, проверьте подключение к сети, либо дождитесь починки сервера", "", "", "", ""};
 
             System.out.println(e.getMessage());
         }
