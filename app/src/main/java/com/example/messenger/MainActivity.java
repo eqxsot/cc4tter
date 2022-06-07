@@ -32,7 +32,7 @@ import okhttp3.ResponseBody;
 
 public class MainActivity extends AppCompatActivity {
     Handler handler;
-    public String serverURL = "https://dcb5-89-232-82-1.eu.ngrok.io"; // URL сервера
+    public String serverURL = "http://46.8.19.139:8080"; // URL сервера
     public EditText msgtext, nametext;
     public Button sendBtn;
     public TextView txt;
